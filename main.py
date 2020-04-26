@@ -24,7 +24,7 @@ def run_entire_pipeline(data_folder,
                         save_gmm,
                         use_latest_gmm,
                         save_hist_folder):
-    
+
 
     todays_date = str(datetime.datetime.now()).split(" ")[0]
     hour_minute = str(datetime.datetime.now()).split(" ")[1]
@@ -38,9 +38,9 @@ def run_entire_pipeline(data_folder,
     )
     hist_folder = u.check_folder_and_create(save_hist_folder + "/" + sub_folder_name)
     hist_bool = [print_hist, hist_folder]  # first argument is for showing them on screen, second for saving them''
-    
 
-    data_samples, sample_classes = get_data(data_folder)    
+
+    data_samples, sample_classes = get_data(data_folder)
     fited_model_for_each_round, results_for_each_round, result_names = cross_validation(regressor, data_samples, sample_classes, folds, hist_bool)
 
 
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     data_folder = args.image_folder
-    regresor = args.regresor:
+    regresor = args.regresor
 
 
     folds = args.folds
